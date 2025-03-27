@@ -12,7 +12,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="py-28 md:py-40 relative overflow-hidden">
+    <section className="pb-28 md:pb-40 relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 z-0">
         {/* Dynamic animated background elements */}
