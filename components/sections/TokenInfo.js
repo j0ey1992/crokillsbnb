@@ -29,6 +29,69 @@ export default function TokenInfo() {
             repeatType: "reverse" 
           }}
         />
+        <motion.div 
+          className="absolute bottom-20 left-20 w-64 h-64 rounded-full bg-secondary-500/5 blur-3xl"
+          animate={{ 
+            scale: [1, 1.15, 1],
+            opacity: [0.4, 0.6, 0.4]
+          }}
+          transition={{ 
+            duration: 10, 
+            repeat: Infinity,
+            repeatType: "reverse",
+            delay: 1
+          }}
+        />
+        
+        {/* Floating Cronos logos */}
+        <div className="absolute inset-0 overflow-hidden">
+          {Array.from({ length: 8 }).map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute"
+              style={{
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+                opacity: 0.02 + Math.random() * 0.03,
+              }}
+              animate={{
+                y: [0, Math.random() * 20 - 10, 0],
+                rotate: [0, Math.random() * 10 - 5, 0],
+              }}
+              transition={{
+                duration: 5 + Math.random() * 5,
+                repeat: Infinity,
+                repeatType: "reverse",
+                delay: Math.random() * 2,
+              }}
+            >
+              <svg width="40" height="46" viewBox="0 0 120.1 138.8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M60.1,0L0,34.7v69.4l60.1,34.7l60-34.7V34.7L60.1,0z M102.3,93.8l-42.3,24.4L17.8,93.8V45l42.3-24.4L102.3,45V93.8z" fill="url(#tokeninfo-logo-gradient-1)" />
+                <path d="M60.1,138.8l60-34.7V34.7L60.1,0v20.6L102.3,45v48.9l-42.3,24.4V138.8z" fill="url(#tokeninfo-logo-gradient-2)" />
+                <path d="M60,0L0,34.7v69.4l60,34.7v-20.6L17.8,93.8V44.9L60,20.6V0z" fill="url(#tokeninfo-logo-gradient-3)" />
+                <path d="M88.1,85.6l-28,16.2L32,85.6V53.2L60.1,37l28,16.2L76.4,60l-16.4-9.5L43.7,60v18.9l16.4,9.5l16.4-9.5L88.1,85.6z" fill="url(#tokeninfo-logo-gradient-4)" />
+                <defs>
+                  <linearGradient id="tokeninfo-logo-gradient-1" x1="0" y1="0" x2="120.1" y2="138.8" gradientUnits="userSpaceOnUse">
+                    <stop stopColor="#00a3ff" />
+                    <stop offset="1" stopColor="#8a2be2" />
+                  </linearGradient>
+                  <linearGradient id="tokeninfo-logo-gradient-2" x1="60.1" y1="0" x2="120.1" y2="138.8" gradientUnits="userSpaceOnUse">
+                    <stop stopColor="#00a3ff" />
+                    <stop offset="1" stopColor="#8a2be2" />
+                  </linearGradient>
+                  <linearGradient id="tokeninfo-logo-gradient-3" x1="0" y1="0" x2="60" y2="138.8" gradientUnits="userSpaceOnUse">
+                    <stop stopColor="#00a3ff" />
+                    <stop offset="1" stopColor="#8a2be2" />
+                  </linearGradient>
+                  <linearGradient id="tokeninfo-logo-gradient-4" x1="32" y1="37" x2="88.1" y2="101.8" gradientUnits="userSpaceOnUse">
+                    <stop stopColor="#00a3ff" />
+                    <stop offset="1" stopColor="#8a2be2" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </motion.div>
+          ))}
+        </div>
       </div>
       
       <div className="max-w-6xl mx-auto px-4 relative z-10">
@@ -75,15 +138,15 @@ export default function TokenInfo() {
           
           {/* Burned LP Card */}
           <motion.div 
-            className="bg-dark-200/60 backdrop-blur-lg rounded-3xl p-8 border border-secondary-500/20 shadow-soft hover:shadow-glow-green transition-all duration-500"
+            className="bg-dark-200/60 backdrop-blur-lg rounded-3xl p-8 border border-secondary-500/20 shadow-soft hover:shadow-glow-purple transition-all duration-500"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
             whileHover={{ 
               y: -10,
-              boxShadow: '0 0 25px rgba(0, 255, 163, 0.3)',
-              borderColor: 'rgba(0, 255, 163, 0.4)'
+              boxShadow: '0 0 25px rgba(138, 43, 226, 0.3)',
+              borderColor: 'rgba(138, 43, 226, 0.4)'
             }}
           >
             <div className="w-14 h-14 mb-6 rounded-2xl bg-secondary-500/10 flex items-center justify-center">

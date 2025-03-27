@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0a0a;
-  --foreground: #ededed;
+  --background: #001a2c;
+  --foreground: #f0f0f0;
 }
 
 @theme inline {
@@ -22,11 +22,24 @@ body {
 appkit-button {
   --w3m-accent-color: #00a3ff;
   --w3m-accent-fill-color: #ffffff;
-  --w3m-background-color: #262626;
+  --w3m-background-color: #002a45;
   --w3m-container-border-radius: 24px;
   --w3m-button-border-radius: 24px;
   --w3m-text-big-bold-size: 16px;
   --w3m-text-medium-regular-size: 14px;
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(to right, #00a3ff, #8a2be2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Enhanced shadow glow */
+.shadow-glow {
+  box-shadow: 0 0 15px rgba(0, 163, 255, 0.15);
 }
 
 /* Scrollbar styles */
@@ -36,16 +49,16 @@ appkit-button {
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(26, 26, 26, 0.5);
+  background: rgba(0, 42, 69, 0.5);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(0, 163, 255, 0.5);
+  background: linear-gradient(to right, rgba(0, 163, 255, 0.6), rgba(138, 43, 226, 0.6));
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 163, 255, 0.7);
+  background: linear-gradient(to right, rgba(0, 163, 255, 0.8), rgba(138, 43, 226, 0.8));
 }
 
 /* Selection styles */

@@ -21,16 +21,16 @@ module.exports = {
           900: '#002033',
         },
         secondary: {
-          50: '#e6fff7',
-          100: '#b3ffe7',
-          200: '#80ffd6',
-          300: '#4dffc4',
-          400: '#26ffb6',
-          500: '#00ffa3', // Primary green
-          600: '#00cc82',
-          700: '#009962',
-          800: '#006641',
-          900: '#003321',
+          50: '#f5e6ff',
+          100: '#e0b3ff',
+          200: '#c980ff',
+          300: '#b24dff',
+          400: '#9e26ff',
+          500: '#8a2be2', // Primary purple
+          600: '#7a00cc',
+          700: '#5c0099',
+          800: '#3d0066',
+          900: '#1f0033',
         },
         dark: {
           DEFAULT: '#0a0a0a',
@@ -59,7 +59,7 @@ module.exports = {
       boxShadow: {
         'soft': '0 4px 14px 0 rgba(0, 0, 0, 0.05)',
         'glow': '0 0 15px rgba(0, 163, 255, 0.5)',
-        'glow-green': '0 0 15px rgba(0, 255, 163, 0.5)',
+        'glow-purple': '0 0 15px rgba(138, 43, 226, 0.5)',
       },
       animation: {
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',

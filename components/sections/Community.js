@@ -23,7 +23,7 @@ export default function Community() {
         </svg>
       ),
       url: 'https://twitter.com/crokillsbnb',
-      color: 'from-primary-500 to-primary-600',
+      color: 'from-primary-500 to-secondary-500',
       members: '8,500+',
     },
     {
@@ -35,7 +35,7 @@ export default function Community() {
         </svg>
       ),
       url: 'https://discord.gg/crokillsbnb',
-      color: 'from-indigo-500 to-indigo-600',
+      color: 'from-secondary-500 to-secondary-600',
       members: '5,200+',
     },
   ];
@@ -44,7 +44,7 @@ export default function Community() {
     <section id="community" className="py-20 md:py-28 relative">
       {/* Background elements */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_bottom_right,rgba(0,255,163,0.1)_0,transparent_70%)]"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_bottom_right,rgba(138,43,226,0.1)_0,transparent_70%)]"></div>
         <motion.div 
           className="absolute -bottom-40 -left-40 w-80 h-80 rounded-full bg-secondary-500/5 blur-3xl"
           animate={{ 
@@ -63,6 +63,56 @@ export default function Community() {
           <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-primary-500 to-transparent"></div>
           <div className="absolute top-0 left-2/4 w-px h-full bg-gradient-to-b from-transparent via-secondary-500 to-transparent"></div>
           <div className="absolute top-0 left-3/4 w-px h-full bg-gradient-to-b from-transparent via-primary-500 to-transparent"></div>
+        </div>
+        
+        {/* Floating Cronos logos */}
+        <div className="absolute inset-0 overflow-hidden">
+          {Array.from({ length: 7 }).map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute"
+              style={{
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+                opacity: 0.02 + Math.random() * 0.03,
+              }}
+              animate={{
+                y: [0, Math.random() * 20 - 10, 0],
+                rotate: [0, Math.random() * 10 - 5, 0],
+              }}
+              transition={{
+                duration: 5 + Math.random() * 5,
+                repeat: Infinity,
+                repeatType: "reverse",
+                delay: Math.random() * 2,
+              }}
+            >
+              <svg width="35" height="40" viewBox="0 0 120.1 138.8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M60.1,0L0,34.7v69.4l60.1,34.7l60-34.7V34.7L60.1,0z M102.3,93.8l-42.3,24.4L17.8,93.8V45l42.3-24.4L102.3,45V93.8z" fill="url(#community-logo-gradient-1)" />
+                <path d="M60.1,138.8l60-34.7V34.7L60.1,0v20.6L102.3,45v48.9l-42.3,24.4V138.8z" fill="url(#community-logo-gradient-2)" />
+                <path d="M60,0L0,34.7v69.4l60,34.7v-20.6L17.8,93.8V44.9L60,20.6V0z" fill="url(#community-logo-gradient-3)" />
+                <path d="M88.1,85.6l-28,16.2L32,85.6V53.2L60.1,37l28,16.2L76.4,60l-16.4-9.5L43.7,60v18.9l16.4,9.5l16.4-9.5L88.1,85.6z" fill="url(#community-logo-gradient-4)" />
+                <defs>
+                  <linearGradient id="community-logo-gradient-1" x1="0" y1="0" x2="120.1" y2="138.8" gradientUnits="userSpaceOnUse">
+                    <stop stopColor="#00a3ff" />
+                    <stop offset="1" stopColor="#8a2be2" />
+                  </linearGradient>
+                  <linearGradient id="community-logo-gradient-2" x1="60.1" y1="0" x2="120.1" y2="138.8" gradientUnits="userSpaceOnUse">
+                    <stop stopColor="#00a3ff" />
+                    <stop offset="1" stopColor="#8a2be2" />
+                  </linearGradient>
+                  <linearGradient id="community-logo-gradient-3" x1="0" y1="0" x2="60" y2="138.8" gradientUnits="userSpaceOnUse">
+                    <stop stopColor="#00a3ff" />
+                    <stop offset="1" stopColor="#8a2be2" />
+                  </linearGradient>
+                  <linearGradient id="community-logo-gradient-4" x1="32" y1="37" x2="88.1" y2="101.8" gradientUnits="userSpaceOnUse">
+                    <stop stopColor="#00a3ff" />
+                    <stop offset="1" stopColor="#8a2be2" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </motion.div>
+          ))}
         </div>
       </div>
       

@@ -42,16 +42,16 @@ export default function LogoAnimation() {
   
   return (
     <div className="relative w-full h-64 md:h-80 lg:h-96 mx-auto">
-      {/* Battle arena background */}
-      <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
+      {/* Battle arena background - removed the box-like container */}
+      <div className="absolute inset-0 flex items-center justify-center overflow-visible">
         <motion.div 
-          className="w-full h-full absolute inset-0"
+          className="w-full h-full absolute inset-0 rounded-full opacity-70"
           style={{
-            background: "radial-gradient(circle, rgba(30,41,59,0.8) 0%, rgba(15,23,42,1) 100%)",
-            boxShadow: "inset 0 0 50px rgba(0,0,0,0.5)"
+            background: "radial-gradient(circle, rgba(0,163,255,0.15) 0%, rgba(138,43,226,0.1) 50%, transparent 80%)",
           }}
           animate={{ 
-            opacity: animationStarted ? [0, 1] : 0,
+            opacity: animationStarted ? [0, 0.7] : 0,
+            scale: animationStarted ? [0.8, 1] : 0.8
           }}
           transition={{ duration: 1 }}
         />
@@ -59,7 +59,7 @@ export default function LogoAnimation() {
         <motion.div 
           className="w-40 h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 rounded-full"
           style={{
-            background: "radial-gradient(circle, rgba(79,70,229,0.2) 0%, rgba(79,70,229,0) 70%)",
+            background: "radial-gradient(circle, rgba(138,43,226,0.2) 0%, rgba(138,43,226,0) 70%)",
             filter: "blur(8px)"
           }}
           animate={{ 
@@ -74,17 +74,17 @@ export default function LogoAnimation() {
         />
       </div>
       
-      {/* Battle ground */}
+      {/* Battle ground - made more subtle and integrated */}
       <motion.div
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 w-full max-w-md h-2 bg-gray-700 rounded-full overflow-hidden"
+        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 w-full max-w-md h-1 bg-gradient-to-r from-transparent via-gray-700/30 to-transparent rounded-full overflow-hidden"
         animate={{
           scaleX: animationStarted ? [0, 1] : 0,
-          opacity: animationStarted ? [0, 1] : 0
+          opacity: animationStarted ? [0, 0.7] : 0
         }}
         transition={{ duration: 1, delay: 0.5 }}
       >
         <motion.div
-          className="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-600"
+          className="absolute inset-0 bg-gradient-to-r from-primary-500/70 to-secondary-500/70 blur-[1px]"
           animate={{
             scaleX: fightStage >= 3 ? [0, 1] : 0,
           }}
@@ -286,7 +286,7 @@ export default function LogoAnimation() {
           <motion.div
             className="absolute inset-0 rounded-full"
             style={{
-              background: "radial-gradient(circle, rgba(79,70,229,0.4) 0%, rgba(79,70,229,0) 70%)",
+              background: "radial-gradient(circle, rgba(138,43,226,0.4) 0%, rgba(138,43,226,0) 70%)",
             }}
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ 
@@ -340,9 +340,9 @@ export default function LogoAnimation() {
               />
               <defs>
                 <linearGradient id="slash-gradient" x1="10" y1="60" x2="110" y2="60" gradientUnits="userSpaceOnUse">
-                  <stop offset="0" stopColor="#4F46E5" stopOpacity="0"/>
-                  <stop offset="0.5" stopColor="#4F46E5"/>
-                  <stop offset="1" stopColor="#4F46E5" stopOpacity="0"/>
+                  <stop offset="0" stopColor="#00a3ff" stopOpacity="0"/>
+                  <stop offset="0.5" stopColor="#8a2be2"/>
+                  <stop offset="1" stopColor="#00a3ff" stopOpacity="0"/>
                 </linearGradient>
               </defs>
             </svg>
@@ -363,8 +363,8 @@ export default function LogoAnimation() {
                 ease: "easeOut"
               }}
             >
-              <div className="w-40 h-40 rounded-full bg-indigo-500/30 blur-md" />
-              <div className="absolute inset-0 w-20 h-20 m-auto rounded-full bg-indigo-600/50 blur-sm" />
+              <div className="w-40 h-40 rounded-full bg-secondary-500/30 blur-md" />
+              <div className="absolute inset-0 w-20 h-20 m-auto rounded-full bg-primary-500/50 blur-sm" />
             </motion.div>
           )}
         </>
@@ -402,8 +402,8 @@ export default function LogoAnimation() {
             />
             <defs>
               <linearGradient id="lightning-gradient" x1="20" y1="20" x2="180" y2="180" gradientUnits="userSpaceOnUse">
-                <stop offset="0" stopColor="#002D74"/>
-                <stop offset="1" stopColor="#4F46E5"/>
+                <stop offset="0" stopColor="#00a3ff"/>
+                <stop offset="1" stopColor="#8a2be2"/>
               </linearGradient>
             </defs>
           </svg>
@@ -477,7 +477,7 @@ export default function LogoAnimation() {
                   height: size,
                   top: 0,
                   left: 0,
-                  background: i % 3 === 0 ? '#F0B90B' : i % 3 === 1 ? '#4F46E5' : '#002D74'
+                  background: i % 3 === 0 ? '#F0B90B' : i % 3 === 1 ? '#8a2be2' : '#00a3ff'
                 }}
                 initial={{ scale: 0, x: 0, y: 0, opacity: 0 }}
                 animate={{ 
